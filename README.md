@@ -43,3 +43,66 @@ Since we are missing data for location '1513 Psykiatrinen poliklinikka', we will
 
 I will rerun the scripts to add necessary data
 
+# Summary
+
+In order to get this working, first install docker and docker compose, instructions pertaining to your platform can be found at:
+https://docs.docker.com/engine/install/
+
+create a .env file in this directory filling out these parameters to your choosing: 
+POSTGRES_PASSWORD
+POSTGRES_USER
+POSTGRES_DB
+
+
+Run: 
+
+```bash
+  docker compose up -d
+```
+
+Docker will take care of all necessary networking for you to be able to connect to PostgreSQL. 
+
+## NOTE
+This exercise was done using a PostgreSQL container running on a Raspberry Pi within the same network as my PC. Code was executed from my PC. 
+
+Then, create a env.py file containing all information required to connect to the container: 
+
+DB_User
+DB_password
+DB_host
+DB_port
+DB_name
+DB_table
+
+Create a Python VirtualEnv where our python modules will be stored:
+https://virtualenv.pypa.io/en/latest/
+
+run: 
+```python
+  pip install -r requirements.txt
+```
+
+run:
+```python
+  python fileToDatabase.py
+```
+
+Expected Output: 
+![First Step](https://i.ibb.co/PjWdTdF/Energy-Usage.png)
+Then Run: 
+
+run:
+```python
+  python usageToDatabase
+```
+
+Expected Output:
+![Second Step](https://i.ibb.co/cCL1pZW/file-To-Database.png)
+
+Then Run:
+```python
+  python theGreatMerge.py
+```
+
+Expected Output:
+![Third Step](https://i.ibb.co/dmLhVkw/Merge.png)
