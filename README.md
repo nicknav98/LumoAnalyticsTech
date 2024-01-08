@@ -88,7 +88,10 @@ run:
 ```
 
 Expected Output: 
+
 ![First Step](https://i.ibb.co/PjWdTdF/Energy-Usage.png)
+
+
 Then Run: 
 
 run:
@@ -97,7 +100,10 @@ run:
 ```
 
 Expected Output:
+
 ![Second Step](https://i.ibb.co/cCL1pZW/file-To-Database.png)
+
+
 
 Then Run:
 ```python
@@ -105,4 +111,5 @@ Then Run:
 ```
 
 Expected Output:
+
 ![Third Step](https://i.ibb.co/dmLhVkw/Merge.png)
