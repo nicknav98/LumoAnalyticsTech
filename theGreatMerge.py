@@ -13,21 +13,23 @@ def merge_tables(pg_conn_params):
                     locationName VARCHAR(255),
                     value FLOAT,
                     reportingGroup VARCHAR(255),
-                    TimeStamp TIMESTAMP
+                    TimeStamp TIMESTAMP,
+                    unit VARCHAR(255)
                 );
             """
              cursor.execute(create_new_table_query)
             
             # Merge tables based on property_id
              merge_query = """
-                INSERT INTO merged_table (locationName, value, reportingGroup, TimeStamp)
+                INSERT INTO merged_table (locationName, value, reportingGroup, TimeStamp, unit)
                 SELECT 
                     t1.locationName,
                     t1.value,
                     t1.reportingGroup,
-                    t1.TimeStamp
+                    t1.TimeStamp,
+                    t1.unit
                 FROM "Energy" t1
-                FULL OUTER JOIN "properties" t2 ON t1.locationName = t2.LocationName;
+                FULL OUTER JOIN "properties" t2 ON t1.locationName = t2.locationName;
             """
              cursor.execute(merge_query)
 
