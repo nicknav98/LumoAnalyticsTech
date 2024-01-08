@@ -67,21 +67,21 @@ pg_conn_params = {
 table_name = 'Energy'
 
 
-api_params = {'Record': 'LocationName', 'SearchString': '1002 Vanha kauppahalli',' reportingGroup': 'Electricity', 'StartTime': '2020-01-01', 'EndTime': '2020-01-15'}
+api_params = {'Record': 'LocationName', 'SearchString': '1561 Työterveyskeskus',' reportingGroup': 'Electricity', 'StartTime': '2020-01-01', 'EndTime': '2020-01-15'}
 
 query_api_and_export_to_postgresql(api_url, api_params, pg_conn_params, table_name)
 
-api_params = {'Record': 'LocationName', 'SearchString': '1508 Monitoimitalo Puustellii',' reportingGroup': 'Electricity', 'StartTime': '2020-01-01', 'EndTime': '2020-01-15'}
+#api_params = {'Record': 'LocationName', 'SearchString': '1508 Monitoimitalo Puustellii',' reportingGroup': 'Electricity', 'StartTime': '2020-01-01', 'EndTime': '2020-01-15'}
 
-query_api_and_export_to_postgresql(api_url, api_params, pg_conn_params, table_name)
+#query_api_and_export_to_postgresql(api_url, api_params, pg_conn_params, table_name)
 
-api_params = {'Record': 'LocationName', 'SearchString': '1513 Psykiatrinen poliklinikka',' reportingGroup': 'Electricity', 'StartTime': '2020-01-01', 'EndTime': '2020-01-15'}
+#api_params = {'Record': 'LocationName', 'SearchString': '1513 Psykiatrinen poliklinikka',' reportingGroup': 'Electricity', 'StartTime': '2020-01-01', 'EndTime': '2020-01-15'}
 
-query_api_and_export_to_postgresql(api_url, api_params, pg_conn_params, table_name)
+#query_api_and_export_to_postgresql(api_url, api_params, pg_conn_params, table_name)
 
-api_params = {'Record': 'LocationName', 'SearchString': '1527 Koskelan NT',' reportingGroup': 'Electricity', 'StartTime': '2020-01-01', 'EndTime': '2020-01-15'}
+#api_params = {'Record': 'LocationName', 'SearchString': '1527 Koskelan NT',' reportingGroup': 'Electricity', 'StartTime': '2020-01-01', 'EndTime': '2020-01-15'}
 
-query_api_and_export_to_postgresql(api_url, api_params, pg_conn_params, table_name)
-
+#query_api_and_export_to_postgresql(api_url, api_params, pg_conn_params, table_name)
+###
 #Called function 5 times with sepearate api_params to get data from 5 different locations, and insert them into the same table in the database - shortcutted due to time constraints
 

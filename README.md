@@ -37,3 +37,9 @@ Chosen Properties, 'Buildings' for use of this exercise:
 1513 Psykiatrinen poliklinikka
 1527 Koskelan NT
 
+# Revision 1
+
+Since we are missing data for location '1513 Psykiatrinen poliklinikka', we will use energy readings for location : '1561 Työterveyskeskus'
+
+I will rerun the scripts to add necessary data
+
