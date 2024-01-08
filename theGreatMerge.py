@@ -8,17 +8,28 @@ def merge_tables(pg_conn_params):
         
         # Create a cursor object to execute PostgreSQL queries
         with conn.cursor() as cursor:
-            # Example: Merge tables based on property_id
-            merge_query = """
-                INSERT INTO merged_table (locationName, propertyName, propertyCode)
+             create_new_table_query = """
+                CREATE TABLE IF NOT EXISTS merged_table (
+                    locationName VARCHAR(255),
+                    value FLOAT,
+                    reportingGroup VARCHAR(255),
+                    TimeStamp TIMESTAMP
+                );
+            """
+             cursor.execute(create_new_table_query)
+            
+            # Merge tables based on property_id
+             merge_query = """
+                INSERT INTO merged_table (locationName, value, reportingGroup, TimeStamp)
                 SELECT 
                     t1.locationName,
-                    t1.propertyName,
-                    t1.propertyCode
-                FROM "Properties" t1
-                FULL OUTER JOIN "Energy" t2 ON t1.locationName = t2.LocationName;
+                    t1.value,
+                    t1.reportingGroup,
+                    t1.TimeStamp
+                FROM "Energy" t1
+                FULL OUTER JOIN "properties" t2 ON t1.locationName = t2.LocationName;
             """
-            cursor.execute(merge_query)
+             cursor.execute(merge_query)
 
         # Commit the transaction
         conn.commit()
